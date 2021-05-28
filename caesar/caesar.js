@@ -29,5 +29,6 @@ const caesar = function(text, shift) {
     } // end 
 
     return newString;
+}
 
 module.exports = caesar;
