@@ -60,6 +60,4 @@ const caesar = function(text, shift) {
     
 }
 
-caesar(text, shift);
-
-//module.exports = caesar;
+module.exports = caesar;
