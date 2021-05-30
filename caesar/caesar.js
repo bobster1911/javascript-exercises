@@ -14,8 +14,8 @@ const caesar = function(text, shift) {
         if (number >= 65 && number <= 90) {
             //get shifted char code
             if (shift < 0) { // if negative
-                if ((number + shift) < 65) {
-                    newString[i] = String.fromCharCode(89 + (65 - numShift))
+                if ((numShift) < 65) {
+                    newString[i] = String.fromCharCode(91 + (numShift - 65));
                 } else {
                     newString[i] = String.fromCharCode(numShift);
                 }
@@ -32,8 +32,8 @@ const caesar = function(text, shift) {
         //if lowercase    
         } else if (number >= 97 && number <= 122) {
             if (shift < 0) { // if negative
-                if ((number + shift) < 97) {
-                    newString[i] = String.fromCharCode(121 + (97 - numShift));
+                if ((numShift) < 97) {
+                    newString[i] = String.fromCharCode(123 + (numShift - 97));
                 } else {
                     newString[i] = String.fromCharCode(numShift);
                 }
