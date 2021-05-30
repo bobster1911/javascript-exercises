@@ -9,21 +9,21 @@ const caesar = function(text, shift) {
     for (let i = 0; i < (text.length);i++) {
         
         let number = text.charCodeAt(i);
-
+        let numShift = (number + shift);
         //if capital
         if (number >= 65 && number <= 90) {
             //get shifted char code
             if (shift < 0) { // if negative
                 if ((number + shift) < 65) {
-                    newString[i] = String.fromCharCode(90 + (shift + 1));
+                    newString[i] = String.fromCharCode(89 + (65 - numShift))
                 } else {
-                    newString[i] = String.fromCharCode(shift + number);
+                    newString[i] = String.fromCharCode(numShift);
                 }
-            } else { // if not negative
+            } else { // if positive
                 if (shift > (90 - number)) {
-                    newString[i] = String.fromCharCode(65 + (shift - (90 - number)));
+                    newString[i] = String.fromCharCode(64 + (numShift - 90));
                 } else {
-                    newString[i] = String.fromCharCode(number + shift);
+                    newString[i] = String.fromCharCode(numShift);
                 } // end    
             } // end
             
@@ -33,15 +33,15 @@ const caesar = function(text, shift) {
         } else if (number >= 97 && number <= 122) {
             if (shift < 0) { // if negative
                 if ((number + shift) < 97) {
-                    newString[i] = String.fromCharCode(122 + (shift + 1));
+                    newString[i] = String.fromCharCode(121 + (97 - numShift));
                 } else {
-                    newString[i] = String.fromCharCode(number + shift);
+                    newString[i] = String.fromCharCode(numShift);
                 }
-            } else {
+            } else { // if positive
                 if (shift > (122 - number)) {
-                    newString[i] = String.fromCharCode(97 + (shift - (122 - number)));
+                    newString[i] = String.fromCharCode(96 + (numShift - 122));
                 } else {
-                    newString[i] = String.fromCharCode(number + shift);
+                    newString[i] = String.fromCharCode(numShift);
                 } // end
             }
         // if not an alpha char - do nothing.  
